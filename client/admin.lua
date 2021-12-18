@@ -391,10 +391,10 @@ local function ToggleShowCoordinates()
             local coords = GetEntityCoords(PlayerPedId())
             local heading = GetEntityHeading(PlayerPedId())
             local c = {}
-            c.x = round(coords.x, 2)
-            c.y = round(coords.y, 2)
-            c.z = round(coords.z, 2)
-            heading = round(heading, 2)
+            c.x = QBCore.Shared.Round(coords.x, 2)
+            c.y = QBCore.Shared.Round(coords.y, 2)
+            c.z = QBCore.Shared.Round(coords.z, 2)
+            heading = QBCore.Shared.Round(heading, 2)
             Wait(0)
             Draw2DText(string.format('~w~Ped Coordinates:~b~ vector4(~w~%s~b~, ~w~%s~b~, ~w~%s~b~, ~w~%s~b~)', c.x, c.y, c.z, heading), 4, {66, 182, 245}, 0.4, x + 0.0, y + 0.0)
         end
@@ -423,7 +423,7 @@ local function ToggleVehicleDeveloperMode()
                 Draw2DText('Vehicle Developer Data:', 4, {66, 182, 245}, 0.4, x + 0.0, y + 0.0)
                 Draw2DText(string.format('Entity ID: ~b~%s~s~ | Net ID: ~b~%s~s~', vehicle, netID), 4, {255, 255, 255}, 0.4, x + 0.0, y + 0.025)
                 Draw2DText(string.format('Model: ~b~%s~s~ | Hash: ~b~%s~s~', modelName, hash), 4, {255, 255, 255}, 0.4, x + 0.0, y + 0.050)
-                Draw2DText(string.format('Engine Health: ~b~%s~s~ | Body Health: ~b~%s~s~', round(eHealth, 2), round(bHealth, 2)), 4, {255, 255, 255}, 0.4, x + 0.0, y + 0.075)
+                Draw2DText(string.format('Engine Health: ~b~%s~s~ | Body Health: ~b~%s~s~', QBCore.Shared.Round(eHealth, 2), QBCore.Shared.Round(bHealth, 2)), 4, {255, 255, 255}, 0.4, x + 0.0, y + 0.075)
             end
         end
     end)
