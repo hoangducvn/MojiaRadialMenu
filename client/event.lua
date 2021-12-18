@@ -1,4 +1,4 @@
-local QBCore = exports['MojiaCity']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('MojiaRadialMenu:client:SaveCar', function()
     local ped = PlayerPedId()

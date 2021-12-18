@@ -1,4 +1,4 @@
-local QBCore = exports['MojiaCity']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local invisible = false
 local godmode = false
 local vehicles = {}
@@ -36,17 +36,17 @@ RegisterNetEvent('MojiaRadialMenu:client:GodMode', function()
 end)
 
 for k, v in pairs(QBCore.Shared.Vehicles) do
-    local vehtype = v["type"]
-    if vehicles[vehtype] == nil then
-        vehicles[vehtype] = { }
-    end
-    vehicles[vehtype][k] = v
+	local category = v["category"]
+	if vehicles[category] == nil then
+		vehicles[category] = { }
+	end
+	vehicles[category][k] = v
 end
 
 RegisterNetEvent('MojiaRadialMenu:client:VehiclesCategoryMenu', function()
 	local CategoryMenu = {
 		{
-			header = 'Vehicles Type Name',
+			header = 'Vehicles Category',
 			isMenuHeader = true
 		},
 	}
@@ -55,13 +55,13 @@ RegisterNetEvent('MojiaRadialMenu:client:VehiclesCategoryMenu', function()
 			header = k,
 			txt = k..' Vehicles List',
 			params = {
-				event = "MojiaRadialMenu:client:OpenCarTypesMenu",
+				event = "MojiaRadialMenu:client:OpenCarModelsMenu",
 				args = v
 			}
 		})
     end
 	table.insert(CategoryMenu, {
-		header = QBCore.Shared.MultilLang('menu_close'),
+		header = 'Close',
 		txt = "",
 		params = {
 			event = "qb-menu:closeMenu",
@@ -70,51 +70,7 @@ RegisterNetEvent('MojiaRadialMenu:client:VehiclesCategoryMenu', function()
 	exports['qb-menu']:openMenu(CategoryMenu)
 end)
 
-RegisterNetEvent('MojiaRadialMenu:client:OpenCarTypesMenu', function(vehicleslist)
-    local vehicles1 = {}
-	for k, v in pairs(vehicleslist) do
-		local category = v["category"]
-		if vehicles1[category] == nil then
-			vehicles1[category] = { }
-		end
-		vehicles1[category][k] = v
-	end
-	
-	local CarModelsMenu = {
-		{
-			header = 'Vehicles List',
-			isMenuHeader = true
-		},
-	}
-    for k, v in pairs(vehicles1) do
-        table.insert(CarModelsMenu, {
-			header = k,
-			txt = k..' Vehicles List',
-			params = {
-				event = "MojiaRadialMenu:client:OpenCarModelsMenu",
-				args = {
-					list = v,
-					typemenu = vehicleslist,
-				}
-			}
-		})
-    end
-	table.insert(CarModelsMenu, {
-		header = QBCore.Shared.MultilLang('menu_back'),
-		txt = "",
-		params = {
-			event = "MojiaRadialMenu:client:VehiclesCategoryMenu",
-		}
-	})
-	table.insert(CarModelsMenu, {
-		header = QBCore.Shared.MultilLang('menu_close'),
-		txt = "",
-		params = {
-			event = "qb-menu:closeMenu",
-		}
-	})
-	exports['qb-menu']:openMenu(CarModelsMenu)
-end)
+
 
 RegisterNetEvent('MojiaRadialMenu:client:OpenCarModelsMenu', function(category)
    local CarModelsMenu = {
@@ -124,7 +80,7 @@ RegisterNetEvent('MojiaRadialMenu:client:OpenCarModelsMenu', function(category)
 		},
 	}
 	
-    for k, v in pairs(category.list) do
+    for k, v in pairs(category) do
         table.insert(CarModelsMenu, {
 			header = v["name"],
 			txt = 'Spawn ' .. v["name"],
@@ -135,15 +91,14 @@ RegisterNetEvent('MojiaRadialMenu:client:OpenCarModelsMenu', function(category)
 		})
     end
 	table.insert(CarModelsMenu, {
-		header = QBCore.Shared.MultilLang('menu_back'),
+		header = 'Back',
 		txt = "",
 		params = {
-			event = "MojiaRadialMenu:client:OpenCarTypesMenu",
-			args = category.typemenu
+			event = "MojiaRadialMenu:client:VehiclesCategoryMenu"
 		}
 	})
 	table.insert(CarModelsMenu, {
-		header = QBCore.Shared.MultilLang('menu_close'),
+		header = 'Close',
 		txt = "",
 		params = {
 			event = "qb-menu:closeMenu",
@@ -187,7 +142,7 @@ RegisterNetEvent('MojiaRadialMenu:client:PlayerList', function()
 			})
         end
 		table.insert(PlayerList, {
-			header = QBCore.Shared.MultilLang('menu_close'),
+			header = 'Close',
 			txt = "",
 			params = {
 				event = "qb-menu:closeMenu",
@@ -302,14 +257,14 @@ RegisterNetEvent('MojiaRadialMenu:client:OpenPlayerMenus', function(player)
 		}
 	})
 	table.insert(PlayerMenus, {
-		header = QBCore.Shared.MultilLang('menu_back'),
+		header = 'Back',
 		txt = "",
 		params = {
 			event = 'MojiaRadialMenu:client:PlayerList',
 		}
 	})
 	table.insert(PlayerMenus, {
-		header = QBCore.Shared.MultilLang('menu_close'),
+		header = 'Close',
 		txt = "",
 		params = {
 			event = "qb-menu:closeMenu",
@@ -386,63 +341,6 @@ RegisterNetEvent('MojiaRadialMenu:menu:OpenPermsMenu', function (permsply)
 					QBCore.Functions.Notify('Choose a group!', 'error')
 				end
 			end
-			
-			
-			
-			--[[
-			local selectedgroup = 'Unknown'
-            MenuV:OpenMenu(menu10)
-            menu10:ClearItems()
-            local menu_button20 = menu10:AddSlider({
-                icon = '',
-                label = 'Group',
-                value = 'user',
-                values = {{
-                    label = 'User',
-                    value = 'user',
-                    description = 'Group'
-                }, {
-                    label = 'Admin',
-                    value = 'admin',
-                    description = 'Group'
-                }, {
-                    label = 'God',
-                    value = 'god',
-                    description = 'Group'
-                }},
-                change = function(item, newValue, oldValue)
-                    local vcal = newValue
-                    if vcal == 1 then
-                        selectedgroup = {}
-                        selectedgroup[#selectedgroup+1] = {rank = "user", label = "User"}
-                    elseif vcal == 2 then
-                        selectedgroup = {}
-                        selectedgroup[#selectedgroup+1] = {rank = "admin", label = "Admin"}
-                    elseif vcal == 3 then
-                        selectedgroup = {}
-                        selectedgroup[#selectedgroup+1] = {rank = "god", label = "God"}
-                    end
-                end
-            })
-
-            local menu_button21 = menu10:AddButton({
-                icon = '',
-                label = 'Confirm',
-                value = "giveperms",
-                description = 'Give the permission group',
-                select = function(btn)
-                    if selectedgroup ~= 'Unknown' then
-                        TriggerServerEvent('MojiaRadialMenu:server:setPermissions', permsply.id, selectedgroup)
-			            QBCore.Functions.Notify('Authority group changed!', 'success')
-                        selectedgroup = 'Unknown'
-                    else
-                        QBCore.Functions.Notify('Choose a group!', 'error')
-                    end
-                end
-            })
-			]]--
-        else
-            --MenuV:CloseMenu(menu)
         end
     end)
 end)
@@ -708,7 +606,7 @@ RegisterNetEvent('MojiaRadialMenu:client:WeatherMenu', function()
 		}
 	})
 	table.insert(WeatherMenu, {
-		header = QBCore.Shared.MultilLang('menu_close'),
+		header = 'Close',
 		txt = "",
 		params = {
 			event = "qb-menu:closeMenu",
@@ -746,7 +644,7 @@ RegisterNetEvent('MojiaRadialMenu:client:DealerList', function()
 			})
         end
 		table.insert(DealerList, {
-		header = QBCore.Shared.MultilLang('menu_close'),
+		header = 'Close',
 		txt = "",
 		params = {
 			event = "qb-menu:closeMenu",
@@ -786,14 +684,14 @@ RegisterNetEvent('MojiaRadialMenu:client:OpenDealerMenu', function(dealer)
 		}
 	})
 	table.insert(DealerMenu, {
-		header = QBCore.Shared.MultilLang('menu_back'),
+		header = 'Back',
 		txt = "",
 		params = {
 			event = 'MojiaRadialMenu:client:DealerList',
 		}
 	})
 	table.insert(DealerMenu, {
-		header = QBCore.Shared.MultilLang('menu_close'),
+		header = 'Close',
 		txt = "",
 		params = {
 			event = "qb-menu:closeMenu",

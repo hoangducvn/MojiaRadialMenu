@@ -1,4 +1,4 @@
-local QBCore = exports['MojiaCity']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('MojiaVehicles:openDoor', function(data)
     local string = data.id

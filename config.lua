@@ -1,4 +1,4 @@
-local QBCore = exports['MojiaCity']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 Config = {}
 
@@ -8,8 +8,8 @@ Config.MainMenu = {
 	---------------------------------------------------------------------------------
 	{
 		id = 'adminmenu',
-		title = QBCore.Shared.MultilLang('admin_menu'),
-		icon = '#mj-user-secret',
+		title = 'admin_menu',
+		icon = '#user-secret',
 		enableMenu = function()
 			if isGod() or isAdmin() then
 				return true
@@ -20,8 +20,8 @@ Config.MainMenu = {
 			--Admin option:
 			{
 				id = 'admin_options',
-				title = QBCore.Shared.MultilLang('admin_options'),
-				icon = '#mj-user-secret',
+				title = 'Admin option',
+				icon = '#user-secret',
 				enableMenu = function()
 					if isGod() or isAdmin() then
 						return true
@@ -32,8 +32,8 @@ Config.MainMenu = {
 					--Noclip:
 					{
 						id = 'admin_options1',
-						title = QBCore.Shared.MultilLang('noclip'),
-						icon = '#mj-diagnoses',
+						title = 'Noclip',
+						icon = '#diagnoses',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:ToggleNoClipMode',
 						enableMenu = function()
@@ -46,8 +46,8 @@ Config.MainMenu = {
 					--Revive:
 					{
 						id = 'admin_options2',
-						title = QBCore.Shared.MultilLang('revive'),
-						icon = '#mj-heartbeat',
+						title = 'Revive',
+						icon = '#heartbeat',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:ReviveSelf',
 						enableMenu = function()
@@ -60,8 +60,8 @@ Config.MainMenu = {
 					--Invisible
 					{
 						id = 'admin_options3',
-						title = QBCore.Shared.MultilLang('invisible'),
-						icon = '#mj-eye-slash',
+						title = 'Invisible',
+						icon = '#eye-slash',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:Invisible',
 						enableMenu = function()
@@ -74,8 +74,8 @@ Config.MainMenu = {
 					--Godmode
 					{
 						id = 'admin_options4',
-						title = QBCore.Shared.MultilLang('godmode'),
-						icon = '#mj-crown',
+						title = 'Godmode',
+						icon = '#crown',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:GodMode',
 						enableMenu = function()
@@ -91,8 +91,8 @@ Config.MainMenu = {
 			{
 				--Player Management:
 				id = 'player_management',
-				title = QBCore.Shared.MultilLang('player_management'),
-				icon = '#mj-users',
+				title = 'Player Management',
+				icon = '#users',
 				type = 'client',
 				event = 'MojiaRadialMenu:client:PlayerList',
 				enableMenu = function()
@@ -106,8 +106,8 @@ Config.MainMenu = {
 			{
 				--Server Management:
 				id = 'server_management',
-				title = QBCore.Shared.MultilLang('server_management'),
-				icon = '#mj-planet-ringed',
+				title = 'Server Management',
+				icon = '#planet-ringed',
 				type = 'client',
 				enableMenu = function()
 					if isGod() or isAdmin() then
@@ -119,8 +119,8 @@ Config.MainMenu = {
 					--Weather Options:
 					{
 						id = 'server_management1',
-						title = QBCore.Shared.MultilLang('weather_options'),
-						icon = '#mj-thunderstorm-sun',
+						title = 'Weather Options',
+						icon = '#thunderstorm-sun',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:WeatherMenu',
 						enableMenu = function()
@@ -133,10 +133,10 @@ Config.MainMenu = {
 					--Server Time:
 					{
 						id = 'server_management2',
-						title = QBCore.Shared.MultilLang('server_time'),
-						icon = '#mj-clock',
+						title = 'Server Time',
+						icon = '#clock',
 						type = 'client',
-						event = 'mojiamenu:client:cancelEmote',
+						event = 'MojiaRadialMenu:client:cancelEmote',
 						enableMenu = function()
 							if isGod() or isAdmin() then
 								return true
@@ -147,8 +147,8 @@ Config.MainMenu = {
 					--Blips:
 					{
 						id = 'server_management3',
-						title = QBCore.Shared.MultilLang('blips'),
-						icon = '#mj-map-marked-alt',
+						title = 'Blips',
+						icon = '#map-marked-alt',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:toggleBlips',
 						enableMenu = function()
@@ -161,8 +161,8 @@ Config.MainMenu = {
 					--Names:
 					{
 						id = 'server_management4',
-						title = QBCore.Shared.MultilLang('names'),
-						icon = '#mj-signature',
+						title = 'Names',
+						icon = '#signature',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:toggleNames',
 						enableMenu = function()
@@ -178,8 +178,8 @@ Config.MainMenu = {
 			{
 				--Vehicles:
 				id = 'vehicles',
-				title = QBCore.Shared.MultilLang('vehicles'),
-				icon = '#mj-car',
+				title = 'Vehicles',
+				icon = '#car',
 				type = 'client',
 				enableMenu = function()
 					if isGod() or isAdmin() then
@@ -191,8 +191,8 @@ Config.MainMenu = {
 					--Spawn Vehicle:
 					{
 						id = 'vehicles1',
-						title = QBCore.Shared.MultilLang('spawn_vehicle'),
-						icon = '#mj-map-marker-check',
+						title = 'Spawn Vehicle',
+						icon = '#map-marker-check',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:VehiclesCategoryMenu',
 						enableMenu = function()
@@ -205,8 +205,8 @@ Config.MainMenu = {
 					--Fix Vehicle:
 					{
 						id = 'vehicles2',
-						title = QBCore.Shared.MultilLang('fix_vehicle'),
-						icon = '#mj-wrench',
+						title = 'Fix Vehicle',
+						icon = '#wrench',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:FixVehicle',
 						enableMenu = function()
@@ -219,8 +219,8 @@ Config.MainMenu = {
 					--Buy Vehicle:
 					{
 						id = 'vehicles3',
-						title = QBCore.Shared.MultilLang('buy_vehicle'),
-						icon = '#mj-hand-holding-usd',
+						title = 'Buy Vehicle',
+						icon = '#hand-holding-usd',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:BuyVehicle',
 						enableMenu = function()
@@ -233,8 +233,8 @@ Config.MainMenu = {
 					--Remove Vehicle:
 					{
 						id = 'vehicles4',
-						title = QBCore.Shared.MultilLang('remove_vehicle'),
-						icon = '#mj-parking-slash',
+						title = 'Remove Vehicle',
+						icon = '#parking-slash',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:DeleteVehicle',
 						enableMenu = function()
@@ -250,8 +250,8 @@ Config.MainMenu = {
 			{
 				--Dealer List:
 				id = 'dealer_list',
-				title = QBCore.Shared.MultilLang('dealer_list'),
-				icon = '#mj-capsules',
+				title = 'Dealer List',
+				icon = '#capsules',
 				type = 'client',
 				event = 'MojiaRadialMenu:client:DealerList',
 				enableMenu = function()
@@ -265,8 +265,8 @@ Config.MainMenu = {
 			{
 				--Developer Options:
 				id = 'developer_options',
-				title = QBCore.Shared.MultilLang('developer_options'),
-				icon = '#mj-code',
+				title = 'Developer Options',
+				icon = '#code',
 				type = 'client',
 				enableMenu = function()
 					if isGod() or isAdmin() then
@@ -278,8 +278,8 @@ Config.MainMenu = {
 					--Copy vector2:
 					{
 						id = 'developer_options2',
-						title = QBCore.Shared.MultilLang('copy_vector2'),
-						icon = '#mj-location',
+						title = 'Copy vector2',
+						icon = '#location',
 						type = 'client',
 						event = 'MojiaClipboard:client:copycoords2',
 						enableMenu = function()
@@ -292,8 +292,8 @@ Config.MainMenu = {
 					--Copy vector3:
 					{
 						id = 'developer_options1',
-						title = QBCore.Shared.MultilLang('copy_vector3'),
-						icon = '#mj-map-marked-alt',
+						title = 'Copy vector3',
+						icon = '#map-marked-alt',
 						type = 'client',
 						event = 'MojiaClipboard:client:copycoords3',
 						enableMenu = function()
@@ -306,8 +306,8 @@ Config.MainMenu = {
 					--Copy vector4:
 					{
 						id = 'developer_options2',
-						title = QBCore.Shared.MultilLang('copy_vector4'),
-						icon = '#mj-street-view',
+						title = 'Copy vector4',
+						icon = '#street-view',
 						type = 'client',
 						event = 'MojiaClipboard:client:copycoords4',
 						enableMenu = function()
@@ -321,7 +321,7 @@ Config.MainMenu = {
 					{
 						id = 'copyvehcoord',
 						title = 'Copy Veh Coord',
-						icon = '#mj-road',
+						icon = '#road',
 						type = 'client',
 						event = 'MojiaClipboard:client:copyvehcoord',
 						enableMenu = function()
@@ -337,8 +337,8 @@ Config.MainMenu = {
 					--Display Coords:
 					{
 						id = 'developer_options3',
-						title = QBCore.Shared.MultilLang('display_coords'),
-						icon = '#mj-map-pin',
+						title = 'Display Coords',
+						icon = '#map-pin',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:ToggleCoords',
 						enableMenu = function()
@@ -351,8 +351,8 @@ Config.MainMenu = {
 					--Copy Heading:
 					{
 						id = 'developer_options4',
-						title = QBCore.Shared.MultilLang('copy_heading'),
-						icon = '#mj-location-arrow',
+						title = 'Copy Heading',
+						icon = '#location-arrow',
 						type = 'client',
 						event = 'MojiaClipboard:client:copyheading',
 						enableMenu = function()
@@ -365,8 +365,8 @@ Config.MainMenu = {
 					--Vehicle Dev Mode:
 					{
 						id = 'developer_options5',
-						title = QBCore.Shared.MultilLang('vehicle_dev_mode'),
-						icon = '#mj-car',
+						title = 'Vehicle Dev Mode',
+						icon = '#car',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:ToggleVehicleDeveloperMode',
 						enableMenu = function()
@@ -379,8 +379,8 @@ Config.MainMenu = {
 					--Delete Laser:
 					{
 						id = 'developer_options6',
-						title = QBCore.Shared.MultilLang('delete_laser'),
-						icon = '#mj-sword-laser-alt',
+						title = 'Delete Laser',
+						icon = '#sword-laser-alt',
 						type = 'client',
 						event = 'MojiaRadialMenu:client:deleteLazer',
 						enableMenu = function()
@@ -403,8 +403,8 @@ Config.MainMenu = {
 	---------------------------------------------------------------------------------
 	{
 		id = "atm",
-		title = QBCore.Shared.MultilLang('atm'),
-		icon = '#mj-credit-card',
+		title = 'ATM',
+		icon = '#credit-card',
 		type = 'server',
 		event = 'ATMs:server:openATM',
 		enableMenu = function()
@@ -416,7 +416,7 @@ Config.MainMenu = {
 					local hash = GetHashKey(v)
 					local atm = IsObjectNearPoint(hash, playerCoords.x, playerCoords.y, playerCoords.z, 1.5)
 					if atm then
-						return TriggerServerEvent('MojiaMenu:server:checkCard')
+						return TriggerServerEvent('MojiaRadialMenu:server:checkCard')
 					end
 				end
 			end
@@ -432,8 +432,8 @@ Config.MainMenu = {
 	---------------------------------------------------------------------------------
 	{
 		id = "shop",
-		title = QBCore.Shared.MultilLang('shop'),
-		icon = '#mj-shopping-cart',
+		title = 'Shop',
+		icon = '#shopping-cart',
 		type = 'client',
 		event = 'Shop:openShop',
 		enableMenu = function()
@@ -461,8 +461,8 @@ Config.MainMenu = {
 	{
         --Citizen:
 		id = 'citizen',
-        title = QBCore.Shared.MultilLang('citizen'),
-        icon = '#mj-user',
+        title = 'Citizen',
+        icon = '#user',
 		enableMenu = function()
 			PlayerData = QBCore.Functions.GetPlayerData()
 			if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -474,8 +474,8 @@ Config.MainMenu = {
 			--Open Inventory:
 			{
 				id = 'openinventory',
-				title = QBCore.Shared.MultilLang('open_inventory'),
-				icon = '#mj-backpack',
+				title = 'Open Inventory',
+				icon = '#backpack',
 				type = 'client',
 				event = 'inv:openbag',
 				enableMenu = function()
@@ -489,8 +489,8 @@ Config.MainMenu = {
 			--Mobile:
 			{
 				id = "mobile",
-				title = QBCore.Shared.MultilLang('phone_label'),
-				icon = '#mj-mobile-alt',
+				title = 'Mobile',
+				icon = '#mobile-alt',
 				type = 'client',
 				event = 'Phone:client:openPhone',
 				enableMenu = function()
@@ -504,8 +504,8 @@ Config.MainMenu = {
 			--Give Contact Details:
 			{
 				id = "givenum",
-				title = QBCore.Shared.MultilLang('give_contact_details'),
-				icon = '#mj-address-book',
+				title = 'Give Contact Details',
+				icon = '#address-book',
 				type = 'client',
 				event = 'qb-phone:client:GiveContactDetails',
 				enableMenu = function()
@@ -519,8 +519,8 @@ Config.MainMenu = {
 			--Get In Trunk:
 			{
 				id = "getintrunk",
-				title = QBCore.Shared.MultilLang('get_in_trunk'),
-				icon = '#mj-car',
+				title = 'Get In Trunk',
+				icon = '#car',
 				type = 'client',
 				event = 'qb-trunk:client:GetIn',
 				enableMenu = function()
@@ -534,8 +534,8 @@ Config.MainMenu = {
 			--Corner Selling:
 			{
 				id = "cornerselling",
-				title = QBCore.Shared.MultilLang('corner_selling'),
-				icon = '#mj-cannabis',
+				title = 'Corner Selling',
+				icon = '#cannabis',
 				type = 'client',
 				event = 'qb-drugs:client:cornerselling',
 				enableMenu = function()
@@ -549,8 +549,8 @@ Config.MainMenu = {
 			--Hotdog Selling:
 			{
 				id = "togglehotdogsell",
-				title = QBCore.Shared.MultilLang('hotdog_selling'),
-				icon = '#mj-hotdog',
+				title = 'Hotdog Selling',
+				icon = '#hotdog',
 				type = 'client',
 				event = 'qb-hotdogjob:client:ToggleSell',
 				enableMenu = function()
@@ -564,8 +564,8 @@ Config.MainMenu = {
 			--Interaction:
 			{
 				id = "interaction",
-				title = QBCore.Shared.MultilLang('interaction'),
-				icon = '#mj-exclamation-triangle',
+				title = 'Interaction',
+				icon = '#exclamation-triangle',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
 					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -577,8 +577,8 @@ Config.MainMenu = {
 					--Cuff:
 					{
 						id = "handcuff",
-						title = QBCore.Shared.MultilLang('cuff'),
-						icon = '#mj-user-lock',
+						title = 'Cuff',
+						icon = '#user-lock',
 						type = 'client',
 						event = 'police:client:CuffPlayerSoft',
 						enableMenu = function()
@@ -592,8 +592,8 @@ Config.MainMenu = {
 					--Put In Vehicle:
 					{
 						id = "playerinvehicle",
-						title = QBCore.Shared.MultilLang('put_in_vehicle'),
-						icon = '#mj-car-side',
+						title = 'Put In Vehicle',
+						icon = '#car-side',
 						type = 'client',
 						event = 'police:client:PutPlayerInVehicle',
 						enableMenu = function()
@@ -607,8 +607,8 @@ Config.MainMenu = {
 					--Take Out Of Vehicle:
 					{
 						id = "playeroutvehicle",
-						title = QBCore.Shared.MultilLang('take_out_of_vehicle'),
-						icon = '#mj-car-side',
+						title = 'Take Out Of Vehicle',
+						icon = '#car-side',
 						type = 'client',
 						event = 'police:client:SetPlayerOutVehicle',
 						enableMenu = function()
@@ -622,8 +622,8 @@ Config.MainMenu = {
 					--Rob:
 					{
 						id = "stealplayer",
-						title = QBCore.Shared.MultilLang('rob'),
-						icon = '#mj-mask',
+						title = 'Rob',
+						icon = '#mask',
 						type = 'client',
 						event = 'police:client:RobPlayer',
 						enableMenu = function()
@@ -637,8 +637,8 @@ Config.MainMenu = {
 					--Kidnap:
 					{
 						id = "escort",
-						title = QBCore.Shared.MultilLang('kidnap'),
-						icon = '#mj-user-friends',
+						title = 'Kidnap',
+						icon = '#user-friends',
 						type = 'client',
 						event = 'police:client:KidnapPlayer',
 						enableMenu = function()
@@ -652,8 +652,8 @@ Config.MainMenu = {
 					--Escort:
 					{
 						id = "escort2",
-						title = QBCore.Shared.MultilLang('escort'),
-						icon = '#mj-user-friends',
+						title = 'Escort',
+						icon = '#user-friends',
 						type = 'client',
 						event = 'police:client:EscortPlayer',
 						enableMenu = function()
@@ -667,8 +667,8 @@ Config.MainMenu = {
 					--Hostage:
 					{
 						id = "escort554",
-						title = QBCore.Shared.MultilLang('hostage'),
-						icon = '#mj-child',
+						title = 'Hostage',
+						icon = '#child',
 						type = 'client',
 						event = 'A5:Client:TakeHostage',
 						enableMenu = function()
@@ -693,8 +693,8 @@ Config.MainMenu = {
 	{
         --General:
 		id = 'general',
-        title = QBCore.Shared.MultilLang('general'),
-        icon = '#mj-list-alt',
+        title = 'General',
+        icon = '#list-alt',
 		enableMenu = function()
 			PlayerData = QBCore.Functions.GetPlayerData()
 			if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -706,8 +706,8 @@ Config.MainMenu = {
 			--House Interaction:
 			{
 				id = "house",
-				title = QBCore.Shared.MultilLang('house_interaction'),
-				icon = '#mj-home',
+				title = 'House Interaction',
+				icon = '#home',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
 					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -719,8 +719,8 @@ Config.MainMenu = {
 					--Give House Keys:
 					{
 						id = "givehousekey",
-						title = QBCore.Shared.MultilLang('give_house_keys'),
-						icon = '#mj-key',
+						title = 'Give House Keys',
+						icon = '#key',
 						type = 'client',
 						event = 'qb-houses:client:giveHouseKey',
 						enableMenu = function()
@@ -734,8 +734,8 @@ Config.MainMenu = {
 					--Remove House Keys:
 					{
 						id = "removehousekey",
-						title = QBCore.Shared.MultilLang('remove_house_keys'),
-						icon = '#mj-key',
+						title = 'Remove House Keys',
+						icon = '#key',
 						type = 'client',
 						event = 'qb-houses:client:removeHouseKey',
 						enableMenu = function()
@@ -749,8 +749,8 @@ Config.MainMenu = {
 					--Toggle Doorlock:
 					{
 						id = "togglelock",
-						title = QBCore.Shared.MultilLang('toggle_doorlock'),
-						icon = '#mj-door-closed',
+						title = 'Toggle Doorlock',
+						icon = '#door-closed',
 						type = 'client',
 						event = 'qb-houses:client:toggleDoorlock',
 						enableMenu = function()
@@ -764,8 +764,8 @@ Config.MainMenu = {
 					--Decorate House:
 					{
 						id = "decoratehouse",
-						title = QBCore.Shared.MultilLang('decorate_house'),
-						icon = '#mj-boxes',
+						title = 'Decorate House',
+						icon = '#boxes',
 						type = 'client',
 						event = 'qb-houses:client:decorate',
 						enableMenu = function()
@@ -779,8 +779,8 @@ Config.MainMenu = {
 					--Interaction Locations:
 					{
 						id = "houseLocations",
-						title = QBCore.Shared.MultilLang('interaction_locations'),
-						icon = '#mj-home',
+						title = 'Interaction Locations',
+						icon = '#home',
 						enableMenu = function()
 							PlayerData = QBCore.Functions.GetPlayerData()
 							if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -792,8 +792,8 @@ Config.MainMenu = {
 							--Set Stash:
 							{
 								id = "setstash",
-								title = QBCore.Shared.MultilLang('set_stash'),
-								icon = '#mj-box-open',
+								title = 'Set Stash',
+								icon = '#box-open',
 								type = 'client',
 								event = 'qb-houses:client:setLocation',
 								enableMenu = function()
@@ -807,8 +807,8 @@ Config.MainMenu = {
 							--Set Wardrobe:
 							{
 								id = "setoutift",
-								title = QBCore.Shared.MultilLang('set_wardrobe'),
-								icon = '#mj-tshirt',
+								title = 'Set Wardrobe',
+								icon = '#tshirt',
 								type = 'client',
 								event = 'qb-houses:client:setLocation',
 								enableMenu = function()
@@ -822,8 +822,8 @@ Config.MainMenu = {
 							--Set Logout:
 							{
 								id = "setlogout",
-								title = QBCore.Shared.MultilLang('set_logout'),
-								icon = '#mj-door-open',
+								title = 'Set Logout',
+								icon = '#door-open',
 								type = 'client',
 								event = 'qb-houses:client:setLocation',
 								enableMenu = function()
@@ -841,8 +841,8 @@ Config.MainMenu = {
 			--Clothing:
 			{
 				id = "clothesmenu",
-				title = QBCore.Shared.MultilLang('clothing'),
-				icon = '#mj-tshirt',
+				title = 'Clothing',
+				icon = '#tshirt',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
 					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -866,8 +866,8 @@ Config.MainMenu = {
 	{
         --Vehicle:
 		id = 'vehicle',
-        title = QBCore.Shared.MultilLang('vehicle'),
-        icon = '#mj-car',
+        title = 'Vehicle',
+        icon = '#car',
 		enableMenu = function()
 			PlayerData = QBCore.Functions.GetPlayerData()
 			if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -876,11 +876,11 @@ Config.MainMenu = {
 			return false
 		end,
         items = {
-			--Vehicle Key:
+			--[[Vehicle Key:
 			{
 				id = "vehiclekey",
 				title = 'Vehicle Key',
-				icon = '#mj-car-key',
+				icon = '#car-key',
 				type = 'client',
 				event = 'MojiaVehicles:KeyMenu',
 				enableMenu = function()
@@ -891,11 +891,12 @@ Config.MainMenu = {
 					return false
 				end
 			},
+			]]--
 			--Open Garage:
 			{
 				id = "opengarage",
 				title = 'Open Garage',
-				icon = '#mj-garage-open',
+				icon = '#garage-open',
 				type = 'client',
 				event = 'Garage:openGarage',
 				enableMenu = function()
@@ -913,7 +914,7 @@ Config.MainMenu = {
 			{
 				id = "storeVehicle",
 				title = 'Store Vehicle',
-				icon = '#mj-parking',
+				icon = '#parking',
 				type = 'client',
 				event = 'Garage:storeVehicle',
 				enableMenu = function()
@@ -926,18 +927,19 @@ Config.MainMenu = {
 						if IsPedInAnyVehicle(ped) then
 							veh = GetVehiclePedIsIn(ped)
 						end
-						if exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+						local plate = QBCore.Functions.GetPlate(veh)
+						if CheckHasKey(plate) then
 							return true
 						end
 					end
 					return false
 				end
 			},
-			--Off Engine:
+			--[[Off Engine:
 			{
 				id = "offengine",
 				title = 'Off Engine',
-				icon = '#mj-engine',
+				icon = '#engine',
 				type = 'client',
 				event = 'MojiaVehicles:Engine',
 				enableMenu = function()
@@ -947,8 +949,9 @@ Config.MainMenu = {
 						if IsPedInAnyVehicle(ped, false) then
 							local veh = GetVehiclePedIsIn(ped)
 							local driver = GetPedInVehicleSeat(veh, -1)
+							local plate = QBCore.Functions.GetPlate(veh)
 							if driver == ped then
-								if exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if CheckHasKey(plate) then
 									if GetIsVehicleEngineRunning(veh) then
 										return true
 									end
@@ -963,7 +966,7 @@ Config.MainMenu = {
 			{
 				id = "offengine",
 				title = 'On Engine',
-				icon = '#mj-engine',
+				icon = '#engine',
 				type = 'client',
 				event = 'MojiaVehicles:Engine',
 				enableMenu = function()
@@ -975,7 +978,7 @@ Config.MainMenu = {
 							local plate = QBCore.Functions.GetPlate(veh)
 							local driver = GetPedInVehicleSeat(veh, -1)
 							if driver == ped then
-								if exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if CheckHasKey(plate) then
 									if not GetIsVehicleEngineRunning(veh) then
 										return true
 									end
@@ -990,7 +993,7 @@ Config.MainMenu = {
 			{
 				id = "lockvehicle",
 				title = 'Lock Vehicle',
-				icon = '#mj-car-key',
+				icon = '#car-key',
 				type = 'client',
 				event = 'MojiaVehicles:lockVehicle',
 				enableMenu = function()
@@ -1005,7 +1008,7 @@ Config.MainMenu = {
 						local plate = QBCore.Functions.GetPlate(veh)
 						local vehpos = GetEntityCoords(veh)						
 						if veh ~= nil and #(pos - vehpos) < 7.5 then
-							if exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+							if CheckHasKey(plate) then
 								local vehLockStatus = GetVehicleDoorLockStatus(veh)
 								if vehLockStatus == 1 then
 									return true
@@ -1020,7 +1023,7 @@ Config.MainMenu = {
 			{
 				id = "unlockvehicle",
 				title = 'Unlock Vehicle',
-				icon = '#mj-car-key',
+				icon = '#car-key',
 				type = 'client',
 				event = 'MojiaVehicles:lockVehicle',
 				enableMenu = function()
@@ -1035,7 +1038,7 @@ Config.MainMenu = {
 						local plate = QBCore.Functions.GetPlate(veh)
 						local vehpos = GetEntityCoords(veh)						
 						if veh ~= nil and #(pos - vehpos) < 7.5 then
-							if exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+							if CheckHasKey(plate) then
 								local vehLockStatus = GetVehicleDoorLockStatus(veh)
 								if vehLockStatus ~= 1 then
 									return true
@@ -1046,11 +1049,12 @@ Config.MainMenu = {
 					return false
 				end
 			},
+			]]--
 			--Vehicle Doors:
 			{
 				id = "vehicledoors",
 				title = 'Vehicle Doors',
-				icon = '#mj-car-side',
+				icon = '#car-side',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
 					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -1063,7 +1067,7 @@ Config.MainMenu = {
 						local plate = QBCore.Functions.GetPlate(veh)
 						local vehpos = GetEntityCoords(veh)
 						local class = GetVehicleClass(veh)
-						if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+						if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 							return true
 						end
 					end
@@ -1082,7 +1086,7 @@ Config.MainMenu = {
 					{
 						id = "door0", -- 0 → 5
 						title = 'Driver Side Front',
-						icon = '#mj-doorr1',
+						icon = '#doorr1',
 						type = 'client',
 						event = 'MojiaVehicles:openDoor',
 						enableMenu = function()
@@ -1096,7 +1100,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 0)
 								end
 							end
@@ -1107,7 +1111,7 @@ Config.MainMenu = {
 					{
 						id = "door1", -- 0 → 5
 						title = 'Driver Side Rear',
-						icon = '#mj-doorr1',
+						icon = '#doorl1',
 						type = 'client',
 						event = 'MojiaVehicles:openDoor',
 						enableMenu = function()
@@ -1121,7 +1125,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 1)
 								end
 							end
@@ -1132,7 +1136,7 @@ Config.MainMenu = {
 					{
 						id = "door2", -- 0 → 5
 						title = 'Passenger Side Front',
-						icon = '#mj-doorr1',
+						icon = '#doorl2',
 						type = 'client',
 						event = 'MojiaVehicles:openDoor',
 						enableMenu = function()
@@ -1146,7 +1150,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 2)
 								end
 							end
@@ -1157,7 +1161,7 @@ Config.MainMenu = {
 					{
 						id = "door3", -- 0 → 5
 						title = 'Passenger Side Rear',
-						icon = '#mj-doorr1',
+						icon = '#doorr2',
 						type = 'client',
 						event = 'MojiaVehicles:openDoor',
 						enableMenu = function()
@@ -1171,7 +1175,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 3)
 								end
 							end
@@ -1182,7 +1186,7 @@ Config.MainMenu = {
 					{
 						id = "door4", -- 0 → 5
 						title = 'Bonnet',
-						icon = '#mj-doorr1',
+						icon = '#hood',
 						type = 'client',
 						event = 'MojiaVehicles:openDoor',
 						enableMenu = function()
@@ -1196,7 +1200,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 4)
 								end
 							end
@@ -1207,7 +1211,7 @@ Config.MainMenu = {
 					{
 						id = "door5", -- 0 → 5
 						title = 'Boot',
-						icon = '#mj-doorr1',
+						icon = '#trunk',
 						type = 'client',
 						event = 'MojiaVehicles:openDoor',
 						enableMenu = function()
@@ -1221,7 +1225,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 5)
 								end
 							end
@@ -1234,7 +1238,7 @@ Config.MainMenu = {
 			{
 				id = "vehicledoors",
 				title = 'Vehicle Window',
-				icon = '#mj-car-side',
+				icon = '#car-side',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
 					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -1247,7 +1251,7 @@ Config.MainMenu = {
 						local plate = QBCore.Functions.GetPlate(veh)
 						local vehpos = GetEntityCoords(veh)
 						local class = GetVehicleClass(veh)
-						if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+						if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 							return true
 						end
 					end
@@ -1268,7 +1272,7 @@ Config.MainMenu = {
 					{
 						id = "window0", -- 0 → 7
 						title = 'Windscreen',
-						icon = '#mj-doorr1',
+						icon = '#doorr1',
 						type = 'client',
 						event = 'MojiaVehicles:Window',
 						enableMenu = function()
@@ -1282,7 +1286,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 0)
 								end
 							end
@@ -1293,7 +1297,7 @@ Config.MainMenu = {
 					{
 						id = "window1", -- 0 → 7
 						title = 'Windscreen Right',
-						icon = '#mj-doorr1',
+						icon = '#doorr1',
 						type = 'client',
 						event = 'MojiaVehicles:Window',
 						enableMenu = function()
@@ -1307,7 +1311,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 1)
 								end
 							end
@@ -1318,7 +1322,7 @@ Config.MainMenu = {
 					{
 						id = "window2", -- 0 → 7
 						title = 'Window Left Front',
-						icon = '#mj-doorr1',
+						icon = '#doorr1',
 						type = 'client',
 						event = 'MojiaVehicles:Window',
 						enableMenu = function()
@@ -1332,7 +1336,7 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 2)
 								end
 							end
@@ -1343,7 +1347,7 @@ Config.MainMenu = {
 					{
 						id = "window3", -- 0 → 7
 						title = 'Window Right Front',
-						icon = '#mj-doorr1',
+						icon = '#doorr1',
 						type = 'client',
 						event = 'MojiaVehicles:Window',
 						enableMenu = function()
@@ -1357,121 +1361,20 @@ Config.MainMenu = {
 								end
 								local plate = QBCore.Functions.GetPlate(veh)
 								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
+								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and CheckHasKey(plate) then
 									return GetIsDoorValid(veh, 3)
 								end
 							end
 							return false
 						end
-					},
-					--[[Window Left Rear:
-					{
-						id = "window4", -- 0 → 7
-						title = 'Window Left Rear',
-						icon = '#mj-doorr1',
-						type = 'client',
-						event = 'MojiaVehicles:Window',
-						enableMenu = function()
-							PlayerData = QBCore.Functions.GetPlayerData()
-							if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
-								local ped = PlayerPedId()
-								local pos = GetEntityCoords(ped)
-								local veh = QBCore.Functions.GetClosestVehicle(pos)
-								if IsPedInAnyVehicle(ped) then
-									veh = GetVehiclePedIsIn(ped)
-								end
-								local plate = QBCore.Functions.GetPlate(veh)
-								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
-									return GetIsDoorValid(veh, 4)
-								end
-							end
-							return false
-						end
-					},
-					--Window Right Rear:
-					{
-						id = "window5", -- 0 → 7
-						title = 'Window Right Rear',
-						icon = '#mj-doorr1',
-						type = 'client',
-						event = 'MojiaVehicles:Window',
-						enableMenu = function()
-							PlayerData = QBCore.Functions.GetPlayerData()
-							if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
-								local ped = PlayerPedId()
-								local pos = GetEntityCoords(ped)
-								local veh = QBCore.Functions.GetClosestVehicle(pos)
-								if IsPedInAnyVehicle(ped) then
-									veh = GetVehiclePedIsIn(ped)
-								end
-								local plate = QBCore.Functions.GetPlate(veh)
-								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
-									return true
-								end
-							end
-							return false
-						end
-					},
-					--WINDOW_LM:
-					{
-						id = "window6", -- 0 → 7
-						title = 'WINDOW_LM',
-						icon = '#mj-doorr1',
-						type = 'client',
-						event = 'MojiaVehicles:Window',
-						enableMenu = function()
-							PlayerData = QBCore.Functions.GetPlayerData()
-							if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
-								local ped = PlayerPedId()
-								local pos = GetEntityCoords(ped)
-								local veh = QBCore.Functions.GetClosestVehicle(pos)
-								if IsPedInAnyVehicle(ped) then
-									veh = GetVehiclePedIsIn(ped)
-								end
-								local plate = QBCore.Functions.GetPlate(veh)
-								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
-									return true
-								end
-							end
-							return false
-						end
-					},
-					--WINDOW_RM:
-					{
-						id = "window7", -- 0 → 7
-						title = 'WINDOW_RM',
-						icon = '#mj-doorr1',
-						type = 'client',
-						event = 'MojiaVehicles:Window',
-						enableMenu = function()
-							PlayerData = QBCore.Functions.GetPlayerData()
-							if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
-								local ped = PlayerPedId()
-								local pos = GetEntityCoords(ped)
-								local veh = QBCore.Functions.GetClosestVehicle(pos)
-								if IsPedInAnyVehicle(ped) then
-									veh = GetVehiclePedIsIn(ped)
-								end
-								local plate = QBCore.Functions.GetPlate(veh)
-								local vehpos = GetEntityCoords(veh)						
-								if veh ~= nil and #(pos - vehpos) < 7.5 and class ~= 8 and class ~= 13 and class ~= 14 and class ~= 21 and exports["MojiaVehicleKey"]:CheckHasKey(veh) then
-									return true
-								end
-							end
-							return false
-						end
-					}
-					]]--
+					},					
 				}
 			},
 			--Vehicle Seats:
 			{
 				id = "vehicleseats",
-				title = QBCore.Shared.MultilLang('vehicle_seats'),
-				icon = '#mj-seat',
+				title = 'vehicle_seats',
+				icon = '#seat',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
 					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then 
@@ -1496,7 +1399,7 @@ Config.MainMenu = {
 					{
 						id = "seat-1", -- -1 → 6
 						title = 'Front Driver Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1512,7 +1415,7 @@ Config.MainMenu = {
 					{
 						id = "seat0", -- -1 → 6
 						title = 'Front Passenger Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1528,7 +1431,7 @@ Config.MainMenu = {
 					{
 						id = "seat1", -- -1 → 6
 						title = 'Back Driver Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1544,7 +1447,7 @@ Config.MainMenu = {
 					{
 						id = "seat2", -- -1 → 6
 						title = 'Back Passenger Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1560,7 +1463,7 @@ Config.MainMenu = {
 					{
 						id = "seat3", -- -1 → 6
 						title = 'Alt Front Driver Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1576,7 +1479,7 @@ Config.MainMenu = {
 					{
 						id = "seat4", -- -1 → 6
 						title = 'Alt Front Passenger Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1592,7 +1495,7 @@ Config.MainMenu = {
 					{
 						id = "seat5", -- -1 → 6
 						title = 'Alt Back Driver Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1608,7 +1511,7 @@ Config.MainMenu = {
 					{
 						id = "seat6", -- -1 → 6
 						title = 'Alt Back Passenger Side',
-						icon = '#mj-seat',
+						icon = '#seat',
 						type = 'client',
 						event = 'MojiaVehicles:changeSeat',
 						enableMenu = function()
@@ -1634,8 +1537,8 @@ Config.MainMenu = {
 	{
         --Police:
 		id = 'police',
-        title = QBCore.Shared.MultilLang('police'),
-        icon = '#mj-badge-sheriff',
+        title = 'police',
+        icon = '#badge-sheriff',
 		enableMenu = function()
 			PlayerData = QBCore.Functions.GetPlayerData()
 			if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and PlayerData.job.name == 'police' then 
@@ -1657,8 +1560,8 @@ Config.MainMenu = {
 	{
         --Ambulance:
 		id = 'ambulance',
-        title = QBCore.Shared.MultilLang('ambulance'),
-        icon = '#mj-ambulance',
+        title = 'ambulance',
+        icon = '#ambulance',
 		enableMenu = function()
 			PlayerData = QBCore.Functions.GetPlayerData()
 			if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and PlayerData.job.name == 'ambulance' then 
@@ -1680,8 +1583,8 @@ Config.MainMenu = {
 	{
         --Mechanic:
 		id = 'mechanic',
-        title = QBCore.Shared.MultilLang('mechanic'),
-        icon = '#mj-car-mechanic',
+        title = 'mechanic',
+        icon = '#car-mechanic',
 		enableMenu = function()
 			PlayerData = QBCore.Functions.GetPlayerData()
 			if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and PlayerData.job.name == 'mechanic' then 
@@ -1690,36 +1593,7 @@ Config.MainMenu = {
 			return false
 		end,
         items = {
-			--Towing:
-			{
-				id = "towing",
-				title = 'Towing',
-				icon = '#mj-truck-loading',
-				type = 'client',
-				event = 'Mojia:Flatbed:TowVehicle',
-				enableMenu = function()
-					PlayerData = QBCore.Functions.GetPlayerData()
-					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and PlayerData.job.name == 'mechanic' and exports["TowingScripts"]:checkLocationVehAndFlatbedOK() then  
-						return true
-					end
-					return false
-				end
-			},
-			--Release:
-			{
-				id = "Release",
-				title = 'Release',
-				icon = '#mj-truck-ramp',
-				type = 'client',
-				event = 'Mojia:Flatbed:TowVehicle',
-				enableMenu = function()
-					PlayerData = QBCore.Functions.GetPlayerData()
-					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and PlayerData.job.name == 'mechanic' and exports["TowingScripts"]:checkLocationReleaseVehOK() then  
-						return true
-					end
-					return false
-				end
-			},
+			
 		}
 	},
 	---------------------------------------------------------------------------------
@@ -1728,12 +1602,23 @@ Config.MainMenu = {
 }
 
 function isGod()
-	return TriggerServerEvent('MojiaMenu:server:checkGod')
+	return TriggerServerEvent('MojiaRadialMenu:server:checkGod')
 end
 
 function isAdmin()
-	return TriggerServerEvent('MojiaMenu:server:checkAdmin')
+	return TriggerServerEvent('MojiaRadialMenu:server:checkAdmin')
 end
+
+function CheckHasKey(plate)
+	return TriggerServerEvent('vehiclekeys:server:CheckHasKey')
+end
+--[[
+RegisterNetEvent('vehiclekeys:server:CheckHasKey', function(plate)
+    local Player = QBCore.Functions.GetPlayer(source)
+    return CheckOwner(plate, Player.PlayerData.citizenid)
+end)
+]]--
+
 
 ATMModels = {
     "prop_atm_01",

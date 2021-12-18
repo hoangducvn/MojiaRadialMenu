@@ -1,4 +1,4 @@
-QBCore = exports['MojiaCity']:GetCoreObject()
+QBCore = exports['qb-core']:GetCoreObject()
 local ShowBlips = false
 local ShowNames = false
 local NetCheck1 = false

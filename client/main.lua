@@ -1,4 +1,4 @@
-local QBCore = exports['MojiaCity']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 -- Menu state
 local showMenu = false
 
@@ -74,8 +74,8 @@ Citizen.CreateThread(function()
 																		if i % MAX_MENU_ITEMS == 0 and i < (#enabledMenuslv5 - 1) then
 																			previousMenu[MAX_MENU_ITEMS + 1] = {
 																				id = "_morelv1",
-																				title = QBCore.Shared.MultilLang('more'),
-																				icon = "#mj-ellipsis-h",
+																				title = 'More',
+																				icon = "#ellipsis-h",
 																				items = current4Element
 																			}
 																			previousMenu = current4Element
@@ -85,8 +85,8 @@ Citizen.CreateThread(function()
 																	if #current4Element > 0 then
 																		previousMenu[MAX_MENU_ITEMS + 1] = {
 																			id = "_morelv1",
-																			title = QBCore.Shared.MultilLang('more'),
-																			icon = "#mj-ellipsis-h",
+																			title = 'More',
+																			icon = "#ellipsis-h",
 																			items = current4Element
 																		}
 																	end
@@ -120,8 +120,8 @@ Citizen.CreateThread(function()
 														if i % MAX_MENU_ITEMS == 0 and i < (#enabledMenuslv4 - 1) then
 															previousMenu[MAX_MENU_ITEMS + 1] = {
 																id = "_morelv1",
-																title = QBCore.Shared.MultilLang('more'),
-																icon = "#mj-ellipsis-h",
+																title = 'More',
+																icon = "#ellipsis-h",
 																items = current3Element
 															}
 															previousMenu = current3Element
@@ -131,8 +131,8 @@ Citizen.CreateThread(function()
 													if #current3Element > 0 then
 														previousMenu[MAX_MENU_ITEMS + 1] = {
 															id = "_morelv1",
-															title = QBCore.Shared.MultilLang('more'),
-															icon = "#mj-ellipsis-h",
+															title = 'More',
+															icon = "#ellipsis-h",
 															items = current3Element
 														}
 													end
@@ -165,8 +165,8 @@ Citizen.CreateThread(function()
 											if i % MAX_MENU_ITEMS == 0 and i < (#enabledMenuslv3 - 1) then
 												previousMenu[MAX_MENU_ITEMS + 1] = {
 													id = "_morelv1",
-													title = QBCore.Shared.MultilLang('more'),
-													icon = "#mj-ellipsis-h",
+													title = 'More',
+													icon = "#ellipsis-h",
 													items = current2Element
 												}
 												previousMenu = current2Element
@@ -176,8 +176,8 @@ Citizen.CreateThread(function()
 										if #current2Element > 0 then
 											previousMenu[MAX_MENU_ITEMS + 1] = {
 												id = "_morelv1",
-												title = QBCore.Shared.MultilLang('more'),
-												icon = "#mj-ellipsis-h",
+												title = 'More',
+												icon = "#ellipsis-h",
 												items = current2Element
 											}
 										end
@@ -211,8 +211,8 @@ Citizen.CreateThread(function()
 								if i % MAX_MENU_ITEMS == 0 and i < (#enabledMenuslv2 - 1) then
 									previousMenu[MAX_MENU_ITEMS + 1] = {
 										id = "_morelv1",
-										title = QBCore.Shared.MultilLang('more'),
-										icon = "#mj-ellipsis-h",
+										title = 'More',
+										icon = "#ellipsis-h",
 										items = current1Element
 									}
 									previousMenu = current1Element
@@ -222,8 +222,8 @@ Citizen.CreateThread(function()
 							if #current1Element > 0 then
 								previousMenu[MAX_MENU_ITEMS + 1] = {
 									id = "_morelv1",
-									title = QBCore.Shared.MultilLang('more'),
-									icon = "#mj-ellipsis-h",
+									title = 'More',
+									icon = "#ellipsis-h",
 									items = current1Element
 								}
 							end
@@ -258,8 +258,8 @@ Citizen.CreateThread(function()
 					if i % MAX_MENU_ITEMS == 0 and i < (#enabledMenuslv1 - 1) then
 						previousMenu[MAX_MENU_ITEMS + 1] = {
 							id = "_morelv1",
-							title = QBCore.Shared.MultilLang('more'),
-							icon = "#mj-ellipsis-h",
+							title = 'More',
+							icon = "#ellipsis-h",
 							items = currentElement
 						}
 						previousMenu = currentElement
@@ -269,8 +269,8 @@ Citizen.CreateThread(function()
 				if #currentElement > 0 then
 					previousMenu[MAX_MENU_ITEMS + 1] = {
 						id = "_morelv1",
-						title = QBCore.Shared.MultilLang('more'),
-						icon = "#mj-ellipsis-h",
+						title = 'More',
+						icon = "#ellipsis-h",
 						items = currentElement
 					}
 				end

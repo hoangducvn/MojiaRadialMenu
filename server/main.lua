@@ -1,6 +1,6 @@
-local QBCore = exports['MojiaCity']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterServerEvent('MojiaMenu:server:checkGod', function()
+RegisterServerEvent('MojiaRadialMenu:server:checkGod', function()
     local src = source
     if QBCore.Functions.HasPermission(src, 'god') then
         return true
@@ -9,7 +9,7 @@ RegisterServerEvent('MojiaMenu:server:checkGod', function()
     end
 end)
 
-RegisterServerEvent('MojiaMenu:server:checkAdmin', function()
+RegisterServerEvent('MojiaRadialMenu:server:checkAdmin', function()
     local src = source
     if QBCore.Functions.HasPermission(src, 'admin') then
         return true
@@ -18,7 +18,7 @@ RegisterServerEvent('MojiaMenu:server:checkAdmin', function()
     end
 end)
 
-RegisterServerEvent('MojiaMenu:server:checkCard', function()
+RegisterServerEvent('MojiaRadialMenu:server:checkCard', function()
     local src = source
     local xPlayer = QBCore.Functions.GetPlayer(src)
     local visas = xPlayer.Functions.GetItemsByName('visa')
