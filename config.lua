@@ -896,13 +896,13 @@ Config.MainMenu = {
 			{
 				id = "opengarage",
 				title = 'Open Garage',
-				icon = '#garage-open',
+				icon = '#mj-garage-open',
 				type = 'client',
 				event = 'MojiaGarages:client:openGarage',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
-					local isingarage, garastate = exports["MojiaGarages"]:IsInGarage()
-					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and isingarage and garastate ~= nil then 
+					local isingarage, canStoreVehicle = exports["MojiaGarages"]:IsInGarage()
+					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and isingarage then 
 						local ped = PlayerPedId()
 						if not IsPedInAnyVehicle(ped, false) then
 							return true
@@ -915,13 +915,13 @@ Config.MainMenu = {
 			{
 				id = "storeVehicle",
 				title = 'Store Vehicle',
-				icon = '#parking',
+				icon = '#mj-parking',
 				type = 'client',
-				event = ''MojiaGarages:storeVehicle'',
+				event = 'MojiaGarages:client:storeVehicle',
 				enableMenu = function()
 					PlayerData = QBCore.Functions.GetPlayerData()
-					local isingarage, garastate = exports["MojiaGarages"]:IsInGarage()
-					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and isingarage and garastate ~= nil then 
+					local isingarage, canStoreVehicle = exports["MojiaGarages"]:IsInGarage()
+					if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and isingarage and canStoreVehicle then 
 						local ped = PlayerPedId()
 						local pos = GetEntityCoords(ped)
 						local ped = PlayerPedId()
@@ -930,7 +930,7 @@ Config.MainMenu = {
 							veh = GetVehiclePedIsIn(ped)
 						end
 						local plate = QBCore.Functions.GetPlate(veh)
-						if CheckHasKey(plate) and garastate == 1 then
+						if exports["qb-vehiclekeys"]:HasVehicleKey(plate) then
 							return true
 						end
 					end
